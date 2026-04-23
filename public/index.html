@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Truck Tracker</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+  <div class="app-wrapper">
+
+    <header class="app-header">
+      <div class="header-inner">
+        <div class="logo">
+          <div class="logo-icon">🚚</div>
+          <span>Truck Tracker</span>
+        </div>
+
+        <div class="legend">
+          <div class="legend-item"><span class="dot" style="background:#f5c518;"></span>Truck 1</div>
+          <div class="legend-item"><span class="dot" style="background:#f97316;"></span>Truck 2</div>
+          <div class="legend-item"><span class="dot" style="background:#a855f7;"></span>Truck 3</div>
+          <div class="legend-item"><span class="dot" style="background:#22c55e;"></span>Truck 4</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-layout">
+
+      <aside class="sidebar">
+        <div class="sidebar-title">Add Entries</div>
+
+        <div id="entry-list">
+          <div class="entry-card">
+            <div class="entry-num">1</div>
+            <div class="entry-fields">
+              <input type="date" class="field-date"/>
+              <select class="field-truck">
+                <option value="">Truck no.</option>
+                <option value="1">Truck 1</option>
+                <option value="2">Truck 2</option>
+                <option value="3">Truck 3</option>
+                <option value="4">Truck 4</option>
+              </select>
+              <input type="text" class="field-address" placeholder="Enter address"/>
+              <div class="radius-row">
+                <input type="number" class="field-radius" value="16"/>
+                <button class="btn-ok">Plot</button>
+              </div>
+              <div class="entry-status"></div>
+            </div>
+            <button class="btn-remove">&times;</button>
+          </div>
+        </div>
+
+        <button class="btn-add" id="addEntryBtn">+ Add another entry</button>
+      </aside>
+
+      <main class="map-container">
+        <div id="map"></div>
+      </main>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
